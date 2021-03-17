@@ -51,7 +51,7 @@ public class TV {
 	}
 
 	public void setVolumen(int nuevoVolumen) {
-		if(nuevoVolumen <= 7 && nuevoVolumen >= 1 && this.estado == true) {
+		if(nuevoVolumen <= 7 && nuevoVolumen >= 0 && this.estado == true) {
 			this.volumen = nuevoVolumen;
 		}
 	}
