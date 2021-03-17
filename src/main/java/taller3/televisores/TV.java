@@ -80,10 +80,9 @@ public class TV {
 	}
 
 	
-	public void turnOn(boolean estado) { // Encender 
+	public void turnOn() { // Encender 
 		if(this.estado == false) {
-			setEstado(true);
-			return;
+			this.estado = true;
 			
 		}
 	}
@@ -99,8 +98,7 @@ public class TV {
 			}
 	}
 	public void canalDown(){
-			if(this.canal >= 120 && this.canal <= 1 && this.estado == true ) {
-				
+			if(this.canal >= 120 && this.canal <= 1 && this.estado == true ) {	
 				this.canal++;
 			}
 		}
