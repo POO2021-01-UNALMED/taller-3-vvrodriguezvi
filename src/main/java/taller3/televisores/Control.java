@@ -2,6 +2,12 @@ package taller3.televisores;
 
 public class Control {
 	TV tv;
+	
+	
+
+	public Control() {
+		this.tv = tv;
+	}
 
 	public TV getTv() {
 		return tv;
@@ -12,11 +18,6 @@ public class Control {
 		
 	}
 
-	public Control(TV tv) {
-		this.tv = tv;
-		TV.numTV++;
-		
-	}
 	
 	// metodos compartidos con tv
 	
