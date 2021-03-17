@@ -14,6 +14,8 @@ public class TV {
 	public TV(Marca marca, boolean estado) {
 		this.marca = marca;
 		this.estado = estado;
+		TV.numTV++;
+		
 		
 	}
 
@@ -29,10 +31,11 @@ public class TV {
 		return canal;
 	}
 
-	public void setCanal(int canal) {
-		if(this.canal <= 1 && this.canal >=1) {
-			this.canal = canal;
+	public void setCanal(int ControlCanal) {
+		if(ControlCanal <= 120 && ControlCanal >=1 && this.estado == true) {
+			this.canal = ControlCanal;
 		}
+		
 	}
 
 	public int getPrecio() {
@@ -47,10 +50,9 @@ public class TV {
 		return volumen;
 	}
 
-	public void setVolumen(int volumen) {
-		this.volumen = volumen;
-		if(this.volumen <= 7 && this.volumen >= 1) {
-			this.volumen = volumen;
+	public void setVolumen(int nuevoVolumen) {
+		if(nuevoVolumen <= 7 && nuevoVolumen >= 1 && this.estado == true) {
+			this.volumen = nuevoVolumen;
 		}
 	}
 
@@ -85,40 +87,35 @@ public class TV {
 			
 		}
 	}
-	public void turnOff(boolean estado) {
+	public void turnOff() {
 		if(this.estado == true) {
-			setEstado(false);
-			return;
+			this.estado = false;
 			
 		}
 	}
-	public void canalUp(int canal){
-		if(this.estado =  true) {
-			if(this.canal > 120 && this.canal < 1 ) {
+	public void canalUp(){
+			if(this.canal >= 120 && this.canal <= 1 && this.estado ==  true ) {
+				this.canal++;
+			}
+	}
+	public void canalDown(){
+			if(this.canal >= 120 && this.canal <= 1 && this.estado == true ) {
+				
 				this.canal++;
 			}
 		}
-	}
-	public void canalDown(int canal){
-		if(this.estado=  true) {
-			if(this.canal > 120 && this.canal < 1 ) {
-				this.canal--;
-			}
-		}
-	}
-	public void volumenUp(int volumen){
-		if(this.estado = true) {
-			if(this.volumen > 7 && this.volumen < 1 ) {
+	
+	public void volumenUp(){
+			if(this.volumen >= 7 && this.volumen <= 1 && this.estado == true) {
 				this.volumen++;
 			}		
 		}
 		
-	}
-	public void volumenDown(int volumen){
-		if(this.estado = true) {
-			if(this.volumen > 7 && this.volumen < 1 ) {
+	public void volumenDown(){
+			if(this.volumen >= 7 && this.volumen <= 1 && this.estado == true ) {
 				this.volumen--;
 			}
-		}
 	}
+		
 }
+
